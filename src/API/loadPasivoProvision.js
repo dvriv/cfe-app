@@ -1,6 +1,6 @@
 export default async function loadPasivoProvision(mes, año, tipo) {
   try {
-    const response = await fetch(`/api/resumenconcepto?año=${año}&mes=${mes}&modo=provision&tipo=${tipo}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL || ''}/api/resumenconcepto?año=${año}&mes=${mes}&modo=provision&tipo=${tipo}`, {
       method: 'GET',
       headers: {
         'content-type': 'text/html; charset=UTF-8',

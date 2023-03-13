@@ -1,6 +1,6 @@
 export default async function addNewPasivo(proceso, tipo, modo, mes, año, notas) {
   console.log(tipo, modo, mes, año, notas);
-  const response = await fetch('/api/pasivos', {
+  const response = await fetch(`${process.env.REACT_APP_API_URL || ''}/api/pasivos`, {
     method: 'POST',
     body: JSON.stringify({
       proceso,

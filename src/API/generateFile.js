@@ -1,6 +1,6 @@
 export async function generateFileCuotasIMSS(cuentasContables, cuentasMayor) {
   console.log(cuentasContables, cuentasMayor);
-  const response = await fetch('/api/generatetxt', {
+  const response = await fetch(`${process.env.REACT_APP_API_URL || ''}/api/generatetxt`, {
     method: 'POST',
     body: JSON.stringify({
       cuentasContables,
@@ -15,7 +15,7 @@ export async function generateFileCuotasIMSS(cuentasContables, cuentasMayor) {
 
 export async function generateFilePasivoLaboral(cuentas) {
   console.log(cuentas);
-  const response = await fetch('/api/generatetxt', {
+  const response = await fetch(`${process.env.REACT_APP_API_URL || ''}/api/generatetxt`, {
     method: 'POST',
     body: JSON.stringify({
       cuentas,
@@ -28,7 +28,7 @@ export async function generateFilePasivoLaboral(cuentas) {
 }
 
 export async function generateFile(cuentasContables, cuentasMayor, metadata) {
-  const response = await fetch('/api/generatetxt', {
+  const response = await fetch(`${process.env.REACT_APP_API_URL || ''}/api/generatetxt`, {
     method: 'POST',
     body: JSON.stringify({
       cuentasContables,
