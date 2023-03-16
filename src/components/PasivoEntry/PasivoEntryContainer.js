@@ -817,7 +817,7 @@ class PasivoEntryContainer extends Component {
 
     if (this.state.downloadFile === true) {
       this.setState({ downloadFile: false });
-      window.open(`/api/generatetxt?archivo=${this.state.fileName}`);
+      window.open(`${process.env.REACT_APP_API_URL || ''}/api/generatetxt?archivo=${this.state.fileName}`);
     }
     return (
       <PasivoEntry
